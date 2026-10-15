@@ -1,0 +1,233 @@
+/* =======================================================
+   Assignment 3: Student Result Management System CSS
+   ======================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  background-color: #1a365d;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 14px;
+  color: #cbd5e0;
+}
+
+/* Main Container */
+.container {
+  max-width: 950px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* Topper Highlight Box */
+.topper-box {
+  background-color: #fef3c7;
+  border: 2px solid #f59e0b;
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.topper-box h3 {
+  color: #b45309;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.topper-box p {
+  font-size: 15px;
+  font-weight: bold;
+  color: #78350f;
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+}
+
+.card h2 {
+  color: #1a365d;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #2b6cb0;
+  padding-bottom: 5px;
+}
+
+/* Form Layout */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2b6cb0;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: #2b6cb0;
+  color: #ffffff;
+}
+
+.btn-add:hover {
+  background-color: #1a365d;
+}
+
+.btn-clear {
+  background-color: #e2e8f0;
+  color: #333333;
+}
+
+.btn-clear:hover {
+  background-color: #cbd5e0;
+}
+
+.btn-delete {
+  background-color: #e53e3e;
+  color: #ffffff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #9b2c2c;
+}
+
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+table th,
+table td {
+  border: 1px solid #cbd5e0;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+table th {
+  background-color: #2b6cb0;
+  color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+/* Status Badges */
+.badge-pass {
+  background-color: #c6f6d5;
+  color: #22543d;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.badge-fail {
+  background-color: #fed7d7;
+  color: #742a2a;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Row highlight for topper */
+tr.topper-row {
+  background-color: #fef9c3 !important;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #1a365d;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

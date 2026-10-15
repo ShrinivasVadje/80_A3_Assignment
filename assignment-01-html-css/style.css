@@ -1,0 +1,170 @@
+/* =======================================================
+   Assignment 1: Simple & Clean CSS3 Styling
+   ======================================================= */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  background-color: #1a365d;
+  color: #ffffff;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+header h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 14px;
+  color: #cbd5e0;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #2b6cb0;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+nav a:hover {
+  background-color: #1a365d;
+  border-radius: 4px;
+}
+
+/* Main Layout: Two Column layout for Desktop */
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 15px;
+  gap: 20px;
+}
+
+/* Main Content Area */
+main {
+  flex: 3;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+section h2 {
+  color: #1a365d;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #2b6cb0;
+  padding-bottom: 6px;
+  font-size: 20px;
+}
+
+/* Article Cards */
+.article-box {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e0;
+  border-left: 4px solid #2b6cb0;
+  padding: 12px 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.article-box h3 {
+  font-size: 16px;
+  color: #2b6cb0;
+  margin-bottom: 6px;
+}
+
+/* Sidebar / Aside */
+aside {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  height: fit-content;
+}
+
+aside h3 {
+  color: #1a365d;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 5px;
+}
+
+aside p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+aside ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+aside ul li {
+  margin-bottom: 6px;
+}
+
+aside a {
+  color: #2b6cb0;
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #1a365d;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+/* Responsive Media Query for Mobile & Tablets (width <= 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 8px;
+  }
+}

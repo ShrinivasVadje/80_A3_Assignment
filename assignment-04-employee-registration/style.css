@@ -1,0 +1,179 @@
+/* =======================================================
+   Assignment 4: Employee Registration Form CSS
+   ======================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  background-color: #1a365d;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 14px;
+  color: #cbd5e0;
+}
+
+/* Main Container */
+.container {
+  max-width: 550px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  background-color: #def7ec;
+  border: 1px solid #31c48d;
+  color: #03543f;
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Form Card */
+.form-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+}
+
+.form-card h2 {
+  color: #1a365d;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #666666;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #2b6cb0;
+}
+
+/* Error highlight on input */
+input.input-error,
+select.input-error {
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+}
+
+/* Error message text */
+.error-text {
+  display: block;
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background-color: #2b6cb0;
+  color: #ffffff;
+}
+
+.btn-submit:hover {
+  background-color: #1a365d;
+}
+
+.btn-reset {
+  background-color: #e2e8f0;
+  color: #333333;
+}
+
+.btn-reset:hover {
+  background-color: #cbd5e0;
+}
+
+/* Footer */
+footer {
+  background-color: #1a365d;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    margin: 15px auto;
+  }
+
+  .form-card {
+    padding: 18px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+}

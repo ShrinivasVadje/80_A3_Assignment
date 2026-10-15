@@ -1,0 +1,219 @@
+/* =======================================================
+   Assignment 2: Simple & Clean CSS for Navbar, Tables & Forms
+   ======================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* 1. Navbar */
+header {
+  background-color: #1a365d;
+  color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 22px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #90cdf4;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  border: 1px solid #d2d6dc;
+}
+
+section h2 {
+  color: #1a365d;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #2b6cb0;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+section p {
+  color: #555555;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* 2. Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+table th,
+table td {
+  border: 1px solid #cbd5e0;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #2b6cb0;
+  color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+table tbody tr:hover {
+  background-color: #edf2f7;
+}
+
+table tfoot {
+  background-color: #e2e8f0;
+}
+
+/* 3. Form Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #2b6cb0;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  font-weight: normal;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background-color: #2b6cb0;
+  color: #ffffff;
+}
+
+.btn-submit:hover {
+  background-color: #1a365d;
+}
+
+.btn-reset {
+  background-color: #e2e8f0;
+  color: #333333;
+}
+
+.btn-reset:hover {
+  background-color: #cbd5e0;
+}
+
+/* Footer */
+footer {
+  background-color: #1a365d;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .radio-group,
+  .checkbox-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 2: HTML5 Navbar, Tables and Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Navigation Bar -->
+  <header>
+    <h1>Student Portal</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#courses">Course Table</a>
+      <a href="#registration">Registration Form</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container" id="home">
+
+    <!-- 2. Structured HTML Table -->
+    <section id="courses">
+      <h2>Semester Course Schedule</h2>
+      <p>List of subjects offered in the current semester:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th>Subject Name</th>
+            <th>Faculty Name</th>
+            <th>Credits</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IT301</td>
+            <td>Full Stack Web Development</td>
+            <td>Prof. S. Sharma</td>
+            <td>4</td>
+            <td>Theory + Lab</td>
+          </tr>
+          <tr>
+            <td>IT302</td>
+            <td>Database Management Systems</td>
+            <td>Prof. A. Kulkarni</td>
+            <td>4</td>
+            <td>Theory + Lab</td>
+          </tr>
+          <tr>
+            <td>IT303</td>
+            <td>Operating Systems</td>
+            <td>Prof. P. Deshmukh</td>
+            <td>3</td>
+            <td>Theory</td>
+          </tr>
+          <tr>
+            <td>IT304</td>
+            <td>Computer Networks</td>
+            <td>Prof. M. Joshi</td>
+            <td>3</td>
+            <td>Theory</td>
+          </tr>
+          <tr>
+            <td>IT305</td>
+            <td>Software Engineering</td>
+            <td>Prof. R. Verma</td>
+            <td>3</td>
+            <td>Theory</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Total Credits</strong></td>
+            <td><strong>17</strong></td>
+            <td>--</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- 3. Structured HTML Form -->
+    <section id="registration">
+      <h2>Student Course Registration Form</h2>
+      <p>Please enter your details to enroll in the elective courses:</p>
+
+      <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+        
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+        </div>
+
+        <!-- Roll Number -->
+        <div class="form-group">
+          <label for="rollNo">Roll Number:</label>
+          <input type="text" id="rollNo" name="rollNo" placeholder="e.g. 24BIT045" required>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="student@college.edu" required>
+        </div>
+
+        <!-- Gender (Radio Buttons) -->
+        <div class="form-group">
+          <label>Gender:</label>
+          <div class="radio-group">
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+
+        <!-- Branch / Department (Dropdown) -->
+        <div class="form-group">
+          <label for="branch">Select Branch:</label>
+          <select id="branch" name="branch" required>
+            <option value="">-- Select Branch --</option>
+            <option value="IT">Information Technology</option>
+            <option value="CS">Computer Science</option>
+            <option value="EXTC">Electronics &amp; Telecom</option>
+            <option value="AIDS">AI &amp; Data Science</option>
+          </select>
+        </div>
+
+        <!-- Year (Select Dropdown) -->
+        <div class="form-group">
+          <label for="year">Academic Year:</label>
+          <select id="year" name="year" required>
+            <option value="First Year">First Year</option>
+            <option value="Second Year">Second Year</option>
+            <option value="Third Year" selected>Third Year</option>
+            <option value="Final Year">Final Year</option>
+          </select>
+        </div>
+
+        <!-- Technical Interests (Checkboxes) -->
+        <div class="form-group">
+          <label>Areas of Interest:</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="interest" value="Web"> Web Development</label>
+            <label><input type="checkbox" name="interest" value="App"> Mobile App Development</label>
+            <label><input type="checkbox" name="interest" value="Cloud"> Cloud Computing</label>
+            <label><input type="checkbox" name="interest" value="AI"> Machine Learning</label>
+          </div>
+        </div>
+
+        <!-- Address / Remarks (Textarea) -->
+        <div class="form-group">
+          <label for="address">Address / Remarks:</label>
+          <textarea id="address" name="address" rows="3" placeholder="Enter your residential address"></textarea>
+        </div>
+
+        <!-- Submit and Reset Buttons -->
+        <div class="btn-group">
+          <button type="submit" class="btn btn-submit">Submit Form</button>
+          <button type="reset" class="btn btn-reset">Reset</button>
+        </div>
+
+      </form>
+    </section>
+
+  </div>
+
+  <footer id="contact">
+    <p>&copy; 2026 Student Portal - Practical 02 Submission</p>
+  </footer>
+
+</body>
+</html>

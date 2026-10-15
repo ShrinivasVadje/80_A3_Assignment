@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 1: Responsive Webpage using HTML5 & CSS3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section: Contains website title and main heading -->
+  <header>
+    <h1>Department of Information Technology</h1>
+    <p>B.Tech Practical Lab - Assignment 01</p>
+  </header>
+
+  <!-- Navigation Bar: Semantic <nav> tag for links -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#articles">Articles</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Main Container: Holds the main content and sidebar -->
+  <div class="container">
+    
+    <!-- Main Content Area: Semantic <main> tag -->
+    <main>
+      
+      <!-- Section 1: Introduction -->
+      <section id="about">
+        <h2>About Web Development</h2>
+        <p>
+          Web development involves building and maintaining websites. HTML5 provides the basic structure of the webpage using semantic tags, while CSS3 is used for layout, colors, and responsive design across different screen sizes.
+        </p>
+      </section>
+
+      <!-- Section 2: Articles using <article> tags -->
+      <section id="articles">
+        <h2>Recent Topics</h2>
+        
+        <!-- Article 1 -->
+        <article class="article-box">
+          <h3>1. HTML5 Semantic Elements</h3>
+          <p>
+            Semantic elements like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and &lt;footer&gt; clearly describe their meaning to both the browser and the developer. This improves code readability, search engine ranking (SEO), and accessibility for screen readers.
+          </p>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-box">
+          <h3>2. CSS3 Responsive Design</h3>
+          <p>
+            Responsive web design ensures that a website looks good on all devices including desktops, laptops, tablets, and mobile phones. This is achieved using fluid layouts, Flexbox, and CSS media queries.
+          </p>
+        </article>
+      </section>
+
+    </main>
+
+    <!-- Sidebar: Semantic <aside> tag for supplementary information -->
+    <aside>
+      <h3>Student Details</h3>
+      <p><strong>Course:</strong> Full Stack Lab (VSEC)</p>
+      <p><strong>Branch:</strong> B.Tech IT</p>
+      <p><strong>Semester:</strong> VI</p>
+
+      <h3>Important Links</h3>
+      <ul>
+        <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML5</a></li>
+        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <!-- Footer Section: Semantic <footer> tag for copyright and closing notes -->
+  <footer>
+    <p>&copy; 2026 Department of Information Technology. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
