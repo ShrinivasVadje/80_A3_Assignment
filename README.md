@@ -3,6 +3,11 @@
 **Course:** B.Tech Information Technology (Semester VI)  
 **Subject:** Full Stack Development Laboratory (VSEC)  
 
+> **Note on Assignment 1:** This repository features **Dual Preservation**:  
+> 1. [`Assignment-1/`](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/Assignment-1): Original personal developer portfolio created and pushed in August 2026.  
+> 2. [`assignment-01-html-css/`](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-01-html-css): Standardized practical laboratory manual edition.  
+> Both versions satisfy the practical requirements.
+
 ---
 
 ## 📋 Table of Contents & Assignment Directory
@@ -17,7 +22,7 @@
 | **[06](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-06-react-student-info)** | [React Student Information Application (Component Architecture)](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-06-react-student-info/README.md) | React, Vite, Functional Components | ✅ Complete |
 | **[07](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-07-expense-tracker)** | [Personal Expense Tracker & Visual Budget Analyzer](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-07-expense-tracker/README.md) | React, Vite, Functional Components | ✅ Complete |
 | **[08](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-08-student-rest-api)** | [RESTful API for Student Records with Express & MongoDB CRUD](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-08-student-rest-api/README.md) | Node.js, Express, MongoDB, Postman | ✅ Complete |
-| **[09](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-09-mini-project)** | Mini-Project: CRUD REST API (GFG Reference Implementation) | Node.js, Express, REST Architecture | ⏳ Pending |
+| **[09](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-09-mini-project)** | [Mini-Project: CRUD REST API (GFG Reference Implementation)](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-09-mini-project/README.md) | Node.js, Express, REST Architecture | ✅ Complete |
 
 ---
 

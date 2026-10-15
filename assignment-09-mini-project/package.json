@@ -1,0 +1,15 @@
+{
+  "name": "assignment-09-mini-project",
+  "version": "1.0.0",
+  "description": "Mini Project: CRUD REST API using Node.js and Express (GeeksforGeeks Reference)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-api.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}

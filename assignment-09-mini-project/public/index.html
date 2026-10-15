@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 9: Express CRUD REST API (Mini Project)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f0f2f5; color: #333; line-height: 1.5; }
+    header { background: #1a365d; color: white; text-align: center; padding: 20px; }
+    header h1 { font-size: 22px; margin-bottom: 5px; }
+    header p { font-size: 14px; color: #cbd5e0; }
+    .container { max-width: 900px; margin: 20px auto; padding: 0 15px; display: flex; flex-direction: column; gap: 20px; }
+    .card { background: white; padding: 20px; border-radius: 6px; border: 1px solid #cbd5e0; }
+    .card h2 { color: #1a365d; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #2b6cb0; padding-bottom: 5px; }
+    .form-row { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .form-group { flex: 1; min-width: 180px; }
+    label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+    input { width: 100%; padding: 8px 10px; border: 1px solid #cbd5e0; border-radius: 4px; outline: none; }
+    input:focus { border-color: #2b6cb0; }
+    .btn { padding: 9px 16px; font-weight: bold; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; }
+    .btn-add { background: #2b6cb0; color: white; }
+    .btn-add:hover { background: #1a365d; }
+    .btn-edit { background: #f59e0b; color: white; padding: 4px 8px; font-size: 12px; border-radius: 4px; border: none; cursor: pointer; margin-right: 5px; }
+    .btn-del { background: #e53e3e; color: white; padding: 4px 8px; font-size: 12px; border-radius: 4px; border: none; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; }
+    th, td { border: 1px solid #cbd5e0; padding: 10px; text-align: left; }
+    th { background: #2b6cb0; color: white; }
+    tr:nth-child(even) { background: #f7fafc; }
+    .status-msg { background: #def7ec; color: #03543f; padding: 8px 12px; border-radius: 4px; margin-bottom: 12px; font-size: 13px; display: none; }
+    footer { background: #1a365d; color: white; text-align: center; padding: 15px; font-size: 13px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Express.js CRUD REST API — Mini Project</h1>
+    <p>GeeksforGeeks Reference Implementation: Complete Create, Read, Update &amp; Delete</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- Status message banner -->
+    <div id="statusBanner" class="status-msg"></div>
+
+    <!-- Book Entry & Update Form -->
+    <div class="card">
+      <h2 id="formTitle">Add New Book Record (POST /api/books)</h2>
+      <form id="bookForm">
+        <input type="hidden" id="bookId">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" placeholder="e.g. Clean Architecture" required>
+          </div>
+          <div class="form-group">
+            <label for="author">Author Name:</label>
+            <input type="text" id="author" placeholder="e.g. Robert C. Martin" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="price">Price (₹):</label>
+            <input type="number" id="price" min="1" placeholder="e.g. 599" required>
+          </div>
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" id="category" placeholder="e.g. Computer Science" required>
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn btn-add">Add Book</button>
+        <button type="button" id="cancelBtn" class="btn" style="background:#e2e8f0; display:none;" onclick="resetForm()">Cancel Edit</button>
+      </form>
+    </div>
+
+    <!-- Books Table (GET & DELETE) -->
+    <div class="card">
+      <h2>Books Inventory Records (GET /api/books)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="booksTableBody">
+          <!-- Populated dynamically via fetch() -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Express CRUD Mini-Project — Practical 09 Submission</p>
+  </footer>
+
+  <script>
+    const API_URL = '/api/books';
+
+    // Fetch and display all books on load
+    async function loadBooks() {
+      try {
+        const res = await fetch(API_URL);
+        const json = await res.json();
+        const tbody = document.getElementById('booksTableBody');
+        tbody.innerHTML = '';
+
+        json.data.forEach(book => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><strong>#${book.id}</strong></td>
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>${book.category}</td>
+            <td>₹${book.price}</td>
+            <td>
+              <button class="btn-edit" onclick="editBook(${book.id}, '${book.title.replace(/'/g, "\\'")}', '${book.author.replace(/'/g, "\\'")}', ${book.price}, '${book.category.replace(/'/g, "\\'")}')">Edit</button>
+              <button class="btn-del" onclick="deleteBook(${book.id})">Delete</button>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    // Add or Update Book
+    document.getElementById('bookForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const id = document.getElementById('bookId').value;
+      const title = document.getElementById('title').value;
+      const author = document.getElementById('author').value;
+      const price = document.getElementById('price').value;
+      const category = document.getElementById('category').value;
+
+      const bookData = { title, author, price, category };
+
+      if (id) {
+        // PUT Request
+        await fetch(`${API_URL}/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(bookData)
+        });
+        showStatus('Book updated successfully! (PUT /api/books/' + id + ')');
+      } else {
+        // POST Request
+        await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(bookData)
+        });
+        showStatus('New book added successfully! (POST /api/books)');
+      }
+
+      resetForm();
+      loadBooks();
+    });
+
+    // Populate form for Edit
+    function editBook(id, title, author, price, category) {
+      document.getElementById('bookId').value = id;
+      document.getElementById('title').value = title;
+      document.getElementById('author').value = author;
+      document.getElementById('price').value = price;
+      document.getElementById('category').value = category;
+      document.getElementById('formTitle').innerText = 'Edit Book Record (PUT /api/books/' + id + ')';
+      document.getElementById('submitBtn').innerText = 'Update Book';
+      document.getElementById('cancelBtn').style.display = 'inline-block';
+    }
+
+    // Delete Book
+    async function deleteBook(id) {
+      if (confirm('Are you sure you want to delete book #' + id + '?')) {
+        await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+        showStatus('Book #' + id + ' deleted successfully! (DELETE /api/books/' + id + ')');
+        loadBooks();
+      }
+    }
+
+    // Reset Form
+    function resetForm() {
+      document.getElementById('bookForm').reset();
+      document.getElementById('bookId').value = '';
+      document.getElementById('formTitle').innerText = 'Add New Book Record (POST /api/books)';
+      document.getElementById('submitBtn').innerText = 'Add Book';
+      document.getElementById('cancelBtn').style.display = 'none';
+    }
+
+    function showStatus(msg) {
+      const banner = document.getElementById('statusBanner');
+      banner.innerText = msg;
+      banner.style.display = 'block';
+      setTimeout(() => { banner.style.display = 'none'; }, 4000);
+    }
+
+    loadBooks();
+  </script>
+</body>
+</html>
