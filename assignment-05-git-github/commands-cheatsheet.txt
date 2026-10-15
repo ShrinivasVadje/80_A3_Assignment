@@ -1,0 +1,27 @@
+# ========================================================
+# Git & GitHub Commands Quick Reference (Practical 05)
+# ========================================================
+
+# 1. SETUP & CONFIGURATION
+git config --global user.name "Shrinivas Vadje"
+git config --global user.email "shrip4072@gmail.com"
+
+# 2. INITIALIZING REPOSITORY
+git init
+git remote add origin https://github.com/ShrinivasVadje/80_A3_Assignment.git
+git remote -v
+
+# 3. CHECKING STATUS & DIFF
+git status
+git log --oneline -n 5
+
+# 4. STAGING & COMMITTING
+git add .
+git commit -m "Your commit message"
+
+# 5. BRANCHING
+git branch -M main
+
+# 6. PUSHING & PULLING
+git push -u origin main
+git pull origin main
