@@ -16,7 +16,7 @@
 | **[05](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-05-git-github)** | [Git Version Control & GitHub Repository Integration](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-05-git-github/README.md) | Git CLI, GitHub CLI | ✅ Complete |
 | **[06](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-06-react-student-info)** | [React Student Information Application (Component Architecture)](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-06-react-student-info/README.md) | React, Vite, Functional Components | ✅ Complete |
 | **[07](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-07-expense-tracker)** | [Personal Expense Tracker & Visual Budget Analyzer](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-07-expense-tracker/README.md) | React, Vite, Functional Components | ✅ Complete |
-| **[08](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-08-student-rest-api)** | RESTful API for Student Records with Express & MongoDB CRUD | Node.js, Express, MongoDB, Postman | ⏳ Pending |
+| **[08](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-08-student-rest-api)** | [RESTful API for Student Records with Express & MongoDB CRUD](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-08-student-rest-api/README.md) | Node.js, Express, MongoDB, Postman | ✅ Complete |
 | **[09](file:///c:/Users/SHRINIVAS/OneDrive/VSEC/assignment-09-mini-project)** | Mini-Project: CRUD REST API (GFG Reference Implementation) | Node.js, Express, REST Architecture | ⏳ Pending |
 
 ---

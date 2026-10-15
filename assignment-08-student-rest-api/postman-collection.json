@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "Practical 8: Student Records REST API",
+    "description": "Postman Collection for testing Student Records CRUD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET All Students",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/students"
+      }
+    },
+    {
+      "name": "2. POST Create Student",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/students",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rollNo\": \"24BIT05\",\n  \"name\": \"Neha Sharma\",\n  \"department\": \"Information Technology\",\n  \"marks\": 94\n}"
+        }
+      }
+    },
+    {
+      "name": "3. GET Student By ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/students/1"
+      }
+    },
+    {
+      "name": "4. PUT Update Student",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:5000/api/students/1",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"marks\": 99\n}"
+        }
+      }
+    },
+    {
+      "name": "5. DELETE Student",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:5000/api/students/1"
+      }
+    }
+  ]
+}
