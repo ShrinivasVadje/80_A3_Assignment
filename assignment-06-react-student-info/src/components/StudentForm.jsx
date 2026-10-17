@@ -13,14 +13,28 @@ function StudentForm({ onAddStudent }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
+    // 1. Check for empty fields
     if (!name.trim() || !rollNumber.trim() || !department || marks === '') {
       setErrorMessage('Please fill in all fields.');
       return;
     }
 
-    if (marks < 0 || marks > 100) {
-      setErrorMessage('Marks must be between 0 and 100.');
+    // 2. Validate Name: Must NOT contain numbers (alphabets and spaces only)
+    if (/\d/.test(name)) {
+      setErrorMessage('Student Name cannot contain numbers. Please enter letters only.');
+      return;
+    }
+
+    // 3. Validate Roll Number: Must contain numbers/digits (e.g. 24BIT01 or 101)
+    if (!/\d/.test(rollNumber)) {
+      setErrorMessage('Roll Number must contain digits/numbers (e.g. 24BIT01 or 101).');
+      return;
+    }
+
+    // 4. Validate Marks: Must be a number between 0 and 100
+    const numericMarks = Number(marks);
+    if (isNaN(numericMarks) || numericMarks < 0 || numericMarks > 100) {
+      setErrorMessage('Marks must be a valid number between 0 and 100.');
       return;
     }
 
@@ -28,9 +42,9 @@ function StudentForm({ onAddStudent }) {
     const newStudent = {
       id: Date.now(),
       name: name.trim(),
-      rollNumber: rollNumber.trim(),
+      rollNumber: rollNumber.trim().toUpperCase(),
       department: department,
-      marks: Number(marks)
+      marks: numericMarks
     };
 
     // Pass new student to parent App component
@@ -52,20 +66,20 @@ function StudentForm({ onAddStudent }) {
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Student Name:</label>
+          <label>Student Name (Letters only):</label>
           <input
             type="text"
-            placeholder="Enter student name"
+            placeholder="e.g. Rahul Sharma"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
 
         <div className="form-group">
-          <label>Roll Number:</label>
+          <label>Roll Number (Must contain numbers):</label>
           <input
             type="text"
-            placeholder="e.g. 24BIT01"
+            placeholder="e.g. 24BIT01 or 101"
             value={rollNumber}
             onChange={(e) => setRollNumber(e.target.value)}
           />
@@ -86,7 +100,7 @@ function StudentForm({ onAddStudent }) {
         </div>
 
         <div className="form-group">
-          <label>Total Marks (out of 100):</label>
+          <label>Total Marks (0 - 100):</label>
           <input
             type="number"
             min="0"
