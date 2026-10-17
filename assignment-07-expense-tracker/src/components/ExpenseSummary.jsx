@@ -32,7 +32,7 @@ function ExpenseSummary({ expenses }) {
       <h2>Expense Analysis &amp; Overview</h2>
 
       {/* Top Metrics */}
-      <div class="metrics-row">
+      <div className="metrics-row">
         <div className="metric-box">
           <span className="metric-label">Total Spent</span>
           <span className="metric-val">₹{total.toFixed(2)}</span>
